@@ -7,8 +7,8 @@ class Settings(BaseSettings):
 
     # API_PASSWORD: str = 'password'
     class Config:
-        env_file = '.env'
-        env_file_encoding = 'utf-8'
+        env_file = ".env"
+        env_file_encoding = "utf-8"
 
 
 settings = Settings()
