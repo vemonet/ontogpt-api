@@ -30,7 +30,7 @@ dynamic = ["version"]
 dependencies = [
     # "ontogpt",
     # "ontogpt@{root:uri}/../ontogpt",
-    "ontogpt@git+https://github.com/vemonet/ontogpt.git@improve-docs",
+    "ontogpt@git+https://github.com/vemonet/ontogpt.git@add-disable-grounding",
     "fastapi",
     "pydantic[dotenv]",
     "uvicorn",

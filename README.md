@@ -1,6 +1,6 @@
 <div align="center">
 
-# 📖 OntoGPT API
+# ⛏️ OntoGPT API
 
 </div>
 
