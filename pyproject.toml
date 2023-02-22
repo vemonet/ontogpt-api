@@ -21,7 +21,6 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
@@ -47,6 +46,7 @@ test = [
     "ruff >=0.0.219",
     "mypy >=0.991",
     "black >= 22.8.0",
+    "httpx",
 ]
 dev = [
     "pre-commit >=2.17.0",
@@ -85,7 +85,7 @@ check = [
     "mypy src",
 ]
 all = [
-    "format",
+    "fmt",
     "check",
     "cov",
 ]

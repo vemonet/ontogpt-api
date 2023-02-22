@@ -1,10 +1,23 @@
-from ontogpt_api import Api, __version__
+from fastapi.testclient import TestClient
+from src.ontogpt_api import __version__
+from src.ontogpt_api.main import app
+
+client = TestClient(app)
 
 
-def test_api():
+def test_api_extract():
     """Test the package main function"""
-    api = Api()
-    assert api.get_hello_world("test") == "Hello test"
+
+    response = client.post(
+        "/extract",
+        data={
+            # "datamodel": "",
+            # "text": ""
+        },
+        headers={"Content-Type": "application/json"},
+    )
+    resp = response.json()
+    assert len(resp["named_entities"]) > 1
 
 
 def test_version():
