@@ -4,8 +4,9 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse
 from oaklib.utilities.apikey_manager import set_apikey_value
-from src.ontogpt_api.config import settings
-from src.ontogpt_api.opengpt import app as opengpt_router
+
+from ontogpt_api.config import settings
+from ontogpt_api.ontogpt import app as ontogpt_router
 
 set_apikey_value("openai", settings.OPENAI_APIKEY)
 set_apikey_value("bioportal", settings.BIOPORTAL_APIKEY)
@@ -23,7 +24,7 @@ app = FastAPI(
         "url": "https://github.com/vemonet/ontogpt-api",
     },
 )
-app.include_router(opengpt_router)
+app.include_router(ontogpt_router)
 
 app.add_middleware(
     CORSMiddleware,
@@ -33,6 +34,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 @app.middleware("http")
 async def add_process_time_header(request: Request, call_next):
     start_time = time.time()
@@ -40,6 +42,7 @@ async def add_process_time_header(request: Request, call_next):
     process_time = time.time() - start_time
     response.headers["X-Process-Time"] = str(process_time)
     return response
+
 
 @app.get("/", include_in_schema=False)
 def redirect_root_to_docs():

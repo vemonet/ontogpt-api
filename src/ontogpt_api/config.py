@@ -2,6 +2,7 @@ import logging
 
 from pydantic import BaseSettings
 
+
 # Configure settings
 class Settings(BaseSettings):
     BIOPORTAL_APIKEY: str
@@ -11,6 +12,7 @@ class Settings(BaseSettings):
     class Config:
         env_file = ".env"
         env_file_encoding = "utf-8"
+
 
 settings = Settings()
 

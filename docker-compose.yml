@@ -1,13 +1,13 @@
 version: "3.3"
 services:
 
-  opengpt-api:
+  ontogpt-api:
     build: .
     ports:
     - 8000:80
     environment:
       VIRTUAL_PORT: 80
-      VIRTUAL_HOST: opengpt.collaboratory.semanticscience.org
-      LETSENCRYPT_HOST: opengpt.collaboratory.semanticscience.org
+      VIRTUAL_HOST: ontogpt.collaboratory.semanticscience.org
+      LETSENCRYPT_HOST: ontogpt.collaboratory.semanticscience.org
     # env_file:
     #   - .env

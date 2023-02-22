@@ -1,6 +1,7 @@
 from fastapi.testclient import TestClient
-from src.ontogpt_api import __version__
-from src.ontogpt_api.main import app
+
+from ontogpt_api import __version__
+from ontogpt_api.main import app
 
 client = TestClient(app)
 
