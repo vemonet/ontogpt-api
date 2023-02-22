@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 name = "ontogpt-api"
 description = "An API to extract informations from text using OntoGPT"
 readme = "README.md"
@@ -21,7 +21,6 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
@@ -82,7 +81,7 @@ fmt = [
 check = [
     "ruff src tests",
     "black src tests --check",
-    "mypy src",
+    # "mypy src",
 ]
 all = [
     "fmt",

@@ -2,6 +2,8 @@
 
 # 📖 OntoGPT API
 
+[![Run tests](https://github.com/vemonet/ontogpt-api/actions/workflows/test.yml/badge.svg)](https://github.com/vemonet/ontogpt-api/actions/workflows/test.yml)
+
 </div>
 
 An API to extract informations from text using [OntoGPT](https://github.com/monarch-initiative/ontogpt)
