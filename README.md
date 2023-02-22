@@ -2,11 +2,9 @@
 
 # 📖 OntoGPT API
 
-[![Run tests](https://github.com/vemonet/ontogpt-api/actions/workflows/test.yml/badge.svg)](https://github.com/vemonet/ontogpt-api/actions/workflows/test.yml)
-
 </div>
 
-An API to extract informations from text using [OntoGPT](https://github.com/monarch-initiative/ontogpt)
+An API to extract informations from text using [OntoGPT](https://github.com/monarch-initiative/ontogpt).
 
 ## 🧑‍💻 Development setup
 
@@ -35,7 +33,7 @@ Install the dependencies in a local virtual environment:
 hatch -v env create
 ```
 
-Create a `.env` file with your BioPortal and OpenAI API keys:
+Create a `.env` file with your BioPortal and OpenAI API keys required to run OntoGPT:
 
 ```bash
 BIOPORTAL_APIKEY=XXX

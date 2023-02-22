@@ -1,5 +1,8 @@
-name: Run tests
-on: [push, pull_request, workflow_call, workflow_dispatch]
+name: Tests
+
+# Not running it automatically to avoid draining OpenAI credits
+on: [workflow_dispatch]
+# on: [push, pull_request, workflow_call, workflow_dispatch]
 
 jobs:
 
@@ -54,5 +57,8 @@ jobs:
         hatch run check
 
     - name: Test with coverage
+      env:
+        BIOPORTAL_APIKEY: ${{ secrets.BIOPORTAL_APIKEY }}
+        OPENAI_APIKEY: ${{ secrets.OPENAI_APIKEY }}
       run: |
         hatch run cov --cov-report xml:coverage.xml
