@@ -8,7 +8,7 @@ An API to extract informations from text using [OntoGPT](https://github.com/mona
 
 ## 🧑‍💻 Development setup
 
-The final section of the README is for if you want to run the package in development, and get involved by making a code contribution.
+To run the API locally for development.
 
 
 ### 📥️ Clone
@@ -41,6 +41,8 @@ OPENAI_APIKEY=XXX
 ```
 
 ###  🚀 Run the API
+
+On http://localhost:8000
 
 ```bash
 hatch run dev
@@ -83,3 +85,4 @@ Deploy with docker-compose:
 docker-compose up
 ```
 
+> Access on http://localhost:8000
