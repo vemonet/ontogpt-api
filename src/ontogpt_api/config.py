@@ -8,6 +8,4 @@ class Settings(BaseSettings):
     # API_PASSWORD: str = 'password'
 
 
-
 settings = Settings()
-

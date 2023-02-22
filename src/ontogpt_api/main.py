@@ -1,26 +1,22 @@
-from fastapi import APIRouter, FastAPI, Form, Request
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse
 from oaklib.utilities.apikey_manager import set_apikey_value
 from ontogpt.engines.spires_engine import SPIRESEngine
 from src.ontogpt_api.config import settings
 
-
 set_apikey_value("openai", settings.OPENAI_APIKEY)
 set_apikey_value("bioportal", settings.BIOPORTAL_APIKEY)
 
 
 app = FastAPI(
-    title='OntoGPT API',
+    title="OntoGPT API",
     description="""API to extract informations from text using OntoGPT.
 
 [Source code](https://github.com/vemonet/ontogpt-api)
 """,
-    license_info = {
-        "name": "MIT license",
-        "url": "https://opensource.org/licenses/MIT"
-    },
-    contact = {
+    license_info={"name": "MIT license", "url": "https://opensource.org/licenses/MIT"},
+    contact={
         "name": "Vincent Emonet",
         "email": "vincent.emonet@gmail.com",
         "url": "https://github.com/vemonet/ontogpt-api",
@@ -55,4 +51,4 @@ app.add_middleware(
 @app.get("/", include_in_schema=False)
 def redirect_root_to_docs():
     """Redirect the route / to /docs"""
-    return RedirectResponse(url='/docs')
+    return RedirectResponse(url="/docs")
