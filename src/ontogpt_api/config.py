@@ -6,6 +6,9 @@ class Settings(BaseSettings):
     OPENAI_APIKEY: str
 
     # API_PASSWORD: str = 'password'
+    class Config:
+        env_file = '.env'
+        env_file_encoding = 'utf-8'
 
 
 settings = Settings()

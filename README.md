@@ -1,35 +1,10 @@
 <div align="center">
 
-# OntoGPT API
-
-[![PyPI - Version](https://img.shields.io/pypi/v/ontogpt-api.svg?logo=pypi&label=PyPI&logoColor=silver)](https://pypi.org/project/ontogpt-api/)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/ontogpt-api.svg?logo=python&label=Python&logoColor=silver)](https://pypi.org/project/ontogpt-api/)
-[![license](https://img.shields.io/pypi/l/ontogpt-api.svg?color=%2334D058)](https://github.com/vemonet/ontogpt-api/blob/main/LICENSE.txt)
-[![code style - black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-
-[![Test package](https://github.com/vemonet/ontogpt-api/actions/workflows/test.yml/badge.svg)](https://github.com/vemonet/ontogpt-api/actions/workflows/test.yml)
-[![Publish package](https://github.com/vemonet/ontogpt-api/actions/workflows/publish.yml/badge.svg)](https://github.com/vemonet/ontogpt-api/actions/workflows/publish.yml)
+# 📖 OntoGPT API
 
 </div>
 
-An API to extract informations from text using OntoGPT
-
-## 📦️ Installation
-
-This package requires Python >=3.7, simply install it with:
-
-```shell
-pip install ontogpt-api
-```
-
-## 🪄 Usage
- Use this package in python scripts:
-
- ```python
-import ontogpt_api
-
-# TODO: add example to use your package
- ```
+An API to extract informations from text using [OntoGPT](https://github.com/monarch-initiative/ontogpt)
 
 ## 🧑‍💻 Development setup
 
@@ -58,18 +33,17 @@ Install the dependencies in a local virtual environment:
 hatch -v env create
 ```
 
-### ☑️ Run tests
-
-Make sure the existing tests still work by running ``pytest``. Note that any pull requests to the fairworkflows repository on github will automatically trigger running of the test suite;
+Create a `.env` file with your BioPortal and OpenAI API keys:
 
 ```bash
-hatch run tests
+BIOPORTAL_APIKEY=XXX
+OPENAI_APIKEY=XXX
 ```
 
-To display all logs when debugging:
+###  🚀 Run the API
 
 ```bash
-hatch run tests -s
+hatch run dev
 ```
 
 ### 🧹 Code formatting
@@ -94,12 +68,18 @@ In case you are facing issues with dependencies not updating properly you can ea
 hatch env prune
 ```
 
-### 🏷️ New release process
+## 🐳 Deploy in production with docker
 
-The deployment of new releases is done automatically by a GitHub Action workflow when a new release is created on GitHub. To release a new version:
+Create a `.env` file with your BioPortal and OpenAI API keys:
 
-1. Make sure the `PYPI_TOKEN` secret has been defined in the GitHub repository (in Settings > Secrets > Actions). You can get an API token from PyPI at [pypi.org/manage/account](https://pypi.org/manage/account).
-2. Increment the `version` number in the `pyproject.toml` file in the root folder of the repository.
-3. Create a new release on GitHub, which will automatically trigger the publish workflow, and publish the new release to PyPI.
+```bash
+BIOPORTAL_APIKEY=XXX
+OPENAI_APIKEY=XXX
+```
 
-You can also manually trigger the workflow from the Actions tab in your GitHub repository webpage.
+Deploy with docker-compose:
+
+```bash
+docker-compose up
+```
+
