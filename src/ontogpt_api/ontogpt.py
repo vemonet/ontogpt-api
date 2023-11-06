@@ -16,6 +16,8 @@ def post_extract(
     logger.info(f"Received request with schema: {datamodel}")
     logger.info(f"Received request with text: {text}")
     engine = SPIRESEngine(datamodel, grounding=False)
+    # engine.client.skip_annotators(["gilda"])
+    print(engine.annotators)
     ann = engine.extract_from_text(text)
     # logger.info(f"ANNOTATIONS: {ann}")
     return ann
